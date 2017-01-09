@@ -4,7 +4,12 @@ MAINTAINER Martin Rumanek <martin@rumanek.cz>
 
 USER root
 ADD kramerius /kramerius
-RUN chown -R $SOLR_USER:$SOLR_USER /kramerius
+RUN chown -R $SOLR_USER:0 /kramerius && \
+    chmod -R ug+rwX /kramerius && \
+    chown -R $SOLR_USER:0 /opt/solr && \
+    chmod -R ug+rwX /opt/solr && \
+    chown -R $SOLR_USER:0 /opt/docker-solr && \
+    chmod -R ug+rwX /opt/docker-solr && \
 USER $SOLR_USER
 
 #OAI config file is in conf folder of a core
