@@ -9,7 +9,7 @@ RUN chown -R $SOLR_USER:0 /kramerius && \
     chown -R $SOLR_USER:0 /opt/solr && \
     chmod -R ug+rwX /opt/solr && \
     chown -R $SOLR_USER:0 /opt/docker-solr && \
-    chmod -R ug+rwX /opt/docker-solr && \
+    chmod -R ug+rwX /opt/docker-solr
 USER $SOLR_USER
 
 #OAI config file is in conf folder of a core
